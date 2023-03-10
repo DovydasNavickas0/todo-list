@@ -34,7 +34,8 @@ const TodoBase = () => {
     }
 
   return (
-    <div className="TodoBase">
+    <div className="container">
+      <h1 className="m-5 text-center">To-Do List</h1>
       <TodoForm addToDo={addToDo}/>
       <TodoList list={tasks}/>
     </div>

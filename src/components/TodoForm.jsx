@@ -17,10 +17,10 @@ const TodoForm = ({addToDo}) => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form onSubmit={handleSubmit} className="text-center ps-5 pe-5">
+      <Form.Group className="mb-5 mt-5 p-5" controlId="formBasicEmail">
         <Form.Label>New Task</Form.Label>
-        <Form.Control type="text" placeholder="Enter new task"
+        <Form.Control className="" type="text" placeholder="Enter new task"
         value={inputValue} onChange={event => setinputValue(event.target.value)}/>
       </Form.Group>
     </Form>

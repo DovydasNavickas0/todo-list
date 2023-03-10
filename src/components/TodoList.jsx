@@ -6,10 +6,10 @@ const TodoList = (props) => {
     console.log(props.list)
 
     return (
-        <table>
+        <table className="table table-striped">
             <thead>
-                <tr>
-                    <th>eil nr.</th>
+                <tr className="">
+                    <th>#</th>
                     <th>uzduotis</th>
                     <th>ar uzbaigtas</th>
                 </tr>
@@ -18,7 +18,7 @@ const TodoList = (props) => {
             {
                 props.list.map((task, index) =>(
                     <tr key={index}>
-                        <td>{index +1}</td>
+                        <th>{index +1}</th>
                         <td>{task.text}</td>
                         <td>{task.isCompleted ? "Done" : "Still in progress..."}</td>
                     </tr>
