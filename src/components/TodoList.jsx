@@ -1,9 +1,9 @@
-// Prints the stuff
-
+// Prints da stuff
+// TableForTask
 
 const TodoList = (props) => {
 
-    //console.log(props.list)
+    console.log(props.list)
 
     return (
         <table>

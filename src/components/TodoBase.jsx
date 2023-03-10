@@ -1,4 +1,5 @@
 // the base
+// ToDoMain
 
 import { useState } from "react";
 
@@ -11,7 +12,7 @@ const TodoBase = () => {
       {
         id: 1,
         text: "Clean your room",
-        isComplete: false
+        isCompleted: false
       },
       {
         id: 2,
@@ -21,19 +22,20 @@ const TodoBase = () => {
       {
         id: 3,
         text: "To go to the cinema",
-        isComplete: false
+        isCompleted: false
       }
     ]);
 
     //console.log(tasks)
 
     const addToDo = (text) => {
-        const newToDo = [...tasks, {text, isCompleted: false}];
+        const tempVar = [...tasks, {text, isCompleted: false}];
+        setTasks(tempVar)
     }
 
   return (
     <div className="TodoBase">
-      <TodoForm list={tasks}/>
+      <TodoForm addToDo={addToDo}/>
       <TodoList list={tasks}/>
     </div>
   );

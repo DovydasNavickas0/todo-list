@@ -1,13 +1,29 @@
 // adds new tasks
+// FormForTask
 
+import { useState } from 'react'
+import Form from 'react-bootstrap/Form'
 
-const TodoForm = (props) => {
+const TodoForm = ({addToDo}) => {
 
-    //console.log(props.list)
+  const [inputValue, setinputValue] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if(!inputValue) return;
+    addToDo(inputValue);
+    setinputValue('')
+  }
 
   return (
-    <div className="TodoForm">
-    </div>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>New Task</Form.Label>
+        <Form.Control type="text" placeholder="Enter new task"
+        value={inputValue} onChange={event => setinputValue(event.target.value)}/>
+      </Form.Group>
+    </Form>
   );
 }
 
